@@ -1,0 +1,25 @@
+.book-card--grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    margin-top: 15px;
+    text-align: center;
+    padding: 0 15px;
+  }
+}
+
+.book-card--list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .authors {
+    color: #000000a8;
+    margin-left: 10px;
+    .main-wrapper.dark-mode & {
+      color: #9b9b9ba8;
+    }
+  }
+}

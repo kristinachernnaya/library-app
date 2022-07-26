@@ -1,0 +1,56 @@
+@import "../../assets/scss/variables";
+
+.main-wrapper.loadingBg {
+  display: flex;
+  height: 100vh !important;
+  width: 100vw !important;
+  justify-content: center;
+  background: white;
+  &.dark-mode {
+    background-color: #000000d4;
+  }
+}
+
+.loader {
+  width: 128px;
+  height: 128px;
+  border: 3px solid blueviolet;
+  border-bottom: 3px solid transparent;
+  border-radius: 50%;
+  position: relative;
+  animation: spin 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  .main-wrapper.dark-mode & {
+    border: 3px solid rgba(245, 245, 245, 0.541);
+  }
+  .inner {
+    width: 64px;
+    height: 64px;
+    border: 3px solid transparent;
+    border-top: 3px solid blueviolet;
+    border-radius: 50%;
+    animation: spinInner 1s linear infinite;
+    .main-wrapper.dark-mode & {
+      border-top: 3px solid rgba(245, 245, 245, 0.541);
+    }
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinInner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-720deg);
+  }
+}

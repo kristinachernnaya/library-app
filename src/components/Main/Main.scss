@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+@import "../../assets/scss/fonts";
+@import "../../assets/scss/variables";
+
+body {
+  font-family: $main-font !important;
+  margin: 0;
+}
+.main-wrapper {
+  padding: 0 0 30px 0;
+  width: 100%;
+  height: 100%;
+  &.dark-mode {
+    background-color: #000000d4;
+  }
+}
+.theme-switcher {
+  height: 20px;
+  margin-right: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .theme-switcher__toggle {
+    border-radius: 13px;
+    width: 39px;
+    height: 11px;
+    background-color: #581992;
+  }
+
+  &:before {
+    border-radius: 50%;
+    content: "";
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 3px 8px #000;
+    background-image: url(../../assets/img/day-mode-bright-mode-16.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    display: block;
+    transition: 0.4s;
+    position: absolute;
+    top: 0;
+    transform: translateX(0%);
+  }
+
+  .theme-switcher__input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.main-wrapper.dark-mode {
+  .theme-switcher__toggle {
+    background-color: #a0a0a063;
+  }
+  .theme-switcher:before {
+    background-image: url(../../assets/img/night-mode-1-16.png);
+    transition: 0.4s;
+    transform: translateX(100%);
+  }
+}
